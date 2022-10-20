@@ -1,5 +1,5 @@
-
-<table class="table">
+export const Formulario = () =>{
+  return <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -37,3 +37,4 @@
     </tr>
   </tbody>
 </table>
+}
