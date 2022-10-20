@@ -140,3 +140,41 @@ Get-Process -Name geth | Select-Object -property id | Stop-Process -Force; Remov
 
 Primer commit de Javi!
 Segundo Commit de Robert!!
+
+# Nodos -- 
+Terminal 1:
+puppeth
+   Seguimos los pasos para crear el genesis.json:
+      - Nombre de la network (genesis)
+      - 2 Configurar genesis nueva
+      - 1 Crear nueva genesis desde cero
+      - 2 Clique - PoA
+      - 0 Cuantos segundos/bloque
+      - Accounts allowed to seal (aqui cambiamos de terminal y generamos un nodo con los siguientes datos)
+
+   - Generar el Nodo 
+   ./geth --datadir nodo1 account new --password ./pwd.txt
+   (para que busque el pwd.txt debemos crearlo, ya está creado)
+
+   - Se crea una carpeta llamada nodo1 con el fichero JSON dentro, donde está el address que nos pide Puppeth para seal.
+Volvemos a la terminal Puppeth
+   - Pegamos una a una las address al terminal, ya nos pone el 0x (enter para confirmar las tres, luego enter sin añadir nada para seguir)
+   - Accounts pre-funded
+      - Aqui metemos una cuenta de Metamask, yo use la red de pruebas Goerli (0xDf8D4a07A78B2e71bCDC93b2E424274B69491136)
+      - Prefondear las direcciones con 1 WEI (yes)
+      - Chain ID: 333444
+   - 2 Manage existing genesis
+   - 2 Export new genesis
+   - Enter 
+   Ya hemos creado el genesis.json y le hemos dicho cual es el address de cada nodo.
+
+Al final debemos tener:
+   - 3 nodos con un JSON dentro
+   - Un directorio .puppeth con el genesis.json dentro
+   - El genesis.json también fuera, pues lo hemos exportado
+
+
+
+
+
+
