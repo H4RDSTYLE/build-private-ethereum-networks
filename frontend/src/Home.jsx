@@ -8,5 +8,5 @@ export const Home = () =>{
             <Outlet></Outlet>
         </div>
         <Footer></Footer>
-    </div>
+    </div>  
 }
