@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Formulario } from './components/Formulario'
 import { HomeBody } from './components/HomeBody'
 import { Home } from './Home'
+import "./App.css";
 export const App = () => {
     return <BrowserRouter>
         <Routes>

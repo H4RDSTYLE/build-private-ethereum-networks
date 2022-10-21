@@ -1,0 +1,36 @@
+/* Colores:
+https://www.canva.com/colors/color-palettes/summer-splash/
+https://app.beefy.finance/
+*/
+*{
+    box-sizing: border-box;
+
+}
+
+#MainPage{
+    width: 100%;
+}
+
+nav, footer {
+    /* background-color: rgba(16, 16, 16, 0.82);
+    background-color: #05445E; */
+    background-color: #2d3153;
+    /* background-color: #31c77f; */
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > a, footer > a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+nav > a:hover, footer > a:hover {
+    color: #189AB4;
+}
+
+#Content {
+    min-height: 86vh;
+}
