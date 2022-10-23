@@ -18,6 +18,6 @@ export const Header = () =>{
         {/* <button onClick={handleClick} className="btn-success">Formulario</button> */}
         <NavLink to="/formulario" className="m-3">Contact</NavLink>
         <NavLink to="/formulario" className="m-3">Company</NavLink>
-        <NavLink to="/formulario" className="m-3">Networks</NavLink>
+        <NavLink to="/networks" className="m-3">Networks</NavLink>
     </nav>
 }
