@@ -11,11 +11,13 @@ export const Header = () =>{
     //     navigate("/");
     // }
 
-    return <nav>
+    return <nav id="NavigatorBar">
         <NavLink to="/" className="m-3">Index</NavLink>
         <NavLink className="m-3">Build Private Ethereum Networks</NavLink>
         {/* <p onClick={ReturnToIndex}>Index</p> */}
         {/* <button onClick={handleClick} className="btn-success">Formulario</button> */}
-        <NavLink to="/formulario" className="m-3">Formulario</NavLink>
+        <NavLink to="/formulario" className="m-3">Contact</NavLink>
+        <NavLink to="/formulario" className="m-3">Company</NavLink>
+        <NavLink to="/formulario" className="m-3">Networks</NavLink>
     </nav>
 }

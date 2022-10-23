@@ -34,3 +34,18 @@ nav > a:hover, footer > a:hover {
 #Content {
     min-height: 86vh;
 }
+
+.pricing{
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.carousel-item {
+    max-height: 50vh;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.carousel-caption {
+    background-color: #0000008f;
+}
