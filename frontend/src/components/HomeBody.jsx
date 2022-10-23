@@ -34,7 +34,7 @@ export const HomeBody = () =>{
             </button>
         </div>
 
-        <h3>Princing</h3>
+        <h3>Pricing</h3>
         <div className="row">
             <div className="col-4 pricing">
                 <h5>Premium</h5>

@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import SocialButtons from "./SocialButtons";
 
 export const Footer = () =>{
     return <footer>
@@ -6,6 +7,6 @@ export const Footer = () =>{
         <NavLink to="/" className="m-3">Quienes somos</NavLink>
         <NavLink to="/" className="m-3">Privacidad</NavLink>
         <NavLink to="/" className="m-3">Términos y condiciones</NavLink>
-        <NavLink to="/" className="m-3">Iconos</NavLink>
+        <SocialButtons />
     </footer>
 }
