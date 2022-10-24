@@ -168,16 +168,16 @@ Volvemos a la terminal Puppeth
    - Enter 
    Ya hemos creado el genesis.json y le hemos dicho cual es el address de cada nodo.
 
-Corremos el genesis.json con el comando 
-
-./geth --datadir .puppeth init ./genesis.json
-
 Creamos el bootnode para que los nodos se busquen entre ellos:
 ./bootnode --genkey=boot.key
 ./bootnode --verbosity=9 --nodekey=boot.key
 
 Nuestro enode:
 enode://9ca20262a093f941cd8e1a4ed58fa8a3b7f7b01ef9a176b36dff4614b18fbc794449fb6b2f6a040f120592b5823d1a9d5c4c16ac09707a75e098a00dc1429e97@127.0.0.1:0?discport=30301
+
+Corremos el genesis.json con el comando 
+
+./geth --datadir .puppeth init ./genesis.json
 
 Abrimos un terminal para cada nodo, todos corren con la misma base pero con parametris diferentes
 
@@ -187,13 +187,13 @@ Abrimos un terminal para cada nodo, todos corren con la misma base pero con para
  b)    ./geth --datadir nodo1 --http --http.port 8575 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "0x03ae76be116a60a1ed9ee5604e17c22d2b91d560" --password pwd.txt --port 30010 --mine --bootnodes enode://9ca20262a093f941cd8e1a4ed58fa8a3b7f7b01ef9a176b36dff4614b18fbc794449fb6b2f6a040f120592b5823d1a9d5c4c16ac09707a75e098a00dc1429e97@127.0.0.1:0?discport=30301
 
  - Nodo 2 
-  a)   ./geth --datadir nodo1 init ./genesis.json 
+  a)   ./geth --datadir nodo2 init ./genesis.json 
 
   b)   ./geth --datadir nodo2 --http --authrpc.port 8576 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "c1980b3f243e66c291fce254ab6b174cdb4a917a" --password pwd.txt --port 30011 --mine --bootnodes enode://9ca20262a093f941cd8e1a4ed58fa8a3b7f7b01ef9a176b36dff4614b18fbc794449fb6b2f6a040f120592b5823d1a9d5c4c16ac09707a75e098a00dc1429e97@127.0.0.1:0?discport=30301 --ipcpath "\\.\pipe\geth2.ipc"
 
 - Nodo 3 
 [[[ OJO, ESTE NODO NO LE SALE DE LA POLLA CORRER, DA ERROR CON EL RPC ]]]
- a)   ./geth --datadir nodo1 init ./genesis.json 
+ a)   ./geth --datadir nodo3 init ./genesis.json 
 
  b)     ./geth --datadir nodo3 --http --authrpc.port 8590 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "13892bbf6716901586a0226cf4768174d23f5272" --password pwd.txt --port 30012 --mine --bootnodes enode://9ca20262a093f941cd8e1a4ed58fa8a3b7f7b01ef9a176b36dff4614b18fbc794449fb6b2f6a040f120592b5823d1a9d5c4c16ac09707a75e098a00dc1429e97@127.0.0.1:0?discport=30301 --ipcpath "\\.\pipe\geth3.ipc"
 
