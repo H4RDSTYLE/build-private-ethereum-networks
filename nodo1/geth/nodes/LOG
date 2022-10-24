@@ -1,32 +1,8 @@
-=============== Oct 21, 2022 (CEST) ===============
-02:27:38.226010 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-02:27:38.326607 db@open opening
-02:27:38.329670 version@stat F·[] S·0B[] Sc·[]
-02:27:38.360073 db@janitor F·2 G·0
-02:27:38.360112 db@open done T·33.3286ms
-02:27:52.681775 db@close closing
-02:27:52.681775 db@close done T·0s
-=============== Oct 21, 2022 (CEST) ===============
-02:50:37.215965 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-02:50:37.216468 version@stat F·[] S·0B[] Sc·[]
-02:50:37.216511 db@open opening
-02:50:37.216511 journal@recovery F·1
-02:50:37.217097 journal@recovery recovering @1
-02:50:37.369066 memdb@flush created L0@2 N·5 S·272B "loc..seq,v5":"version,v1"
-02:50:37.370500 version@stat F·[1] S·272B[272B] Sc·[0.25]
-02:50:37.869989 db@janitor F·3 G·0
-02:50:37.869989 db@open done T·653.4781ms
-02:58:24.992611 db@close closing
-02:58:24.995120 db@close done T·2.5091ms
-=============== Oct 21, 2022 (CEST) ===============
-02:59:06.466380 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-02:59:06.467368 version@stat F·[1] S·272B[272B] Sc·[0.25]
-02:59:06.467368 db@open opening
-02:59:06.467368 journal@recovery F·1
-02:59:06.471357 journal@recovery recovering @3
-02:59:06.482880 memdb@flush created L0@5 N·8 S·279B "loc..seq,v10":"n:\x82..ail,v8"
-02:59:06.487807 version@stat F·[2] S·551B[551B] Sc·[0.50]
-02:59:06.567955 db@janitor F·4 G·0
-02:59:06.567955 db@open done T·100.587ms
-03:12:45.464972 db@close closing
-03:12:45.464972 db@close done T·0s
+=============== Oct 24, 2022 (CEST) ===============
+13:21:07.377033 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:21:07.443774 db@open opening
+13:21:07.449872 version@stat F·[] S·0B[] Sc·[]
+13:21:07.468337 db@janitor F·2 G·0
+13:21:07.468337 db@open done T·24.3259ms
+14:01:59.840365 db@close closing
+14:01:59.840948 db@close done T·583µs
