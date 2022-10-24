@@ -168,16 +168,16 @@ Volvemos a la terminal Puppeth
    - Enter 
    Ya hemos creado el genesis.json y le hemos dicho cual es el address de cada nodo.
 
-Corremos el genesis.json con el comando 
-
-./geth --datadir .puppeth init ./genesis.json
-
 Creamos el bootnode para que los nodos se busquen entre ellos:
 ./bootnode --genkey=boot.key
 ./bootnode --verbosity=9 --nodekey=boot.key
 
 Nuestro enode:
 enode://da38bbca1ac511a3a9ed54656eb2efb888364c69edd6b858f064a85626427d530ddd7cdd7ffc8efee09805d683a46c3aa2eaa1c71a59003e14dac77f850797c8@127.0.0.1:0?discport=30301
+
+Corremos el genesis.json con el comando 
+
+./geth --datadir .puppeth init ./genesis.json
 
 Abrimos un terminal para cada nodo, todos corren con la misma base pero con parametris diferentes
 
