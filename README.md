@@ -179,7 +179,7 @@ Corremos el genesis.json con el comando
 
 ./geth --datadir .puppeth init ./genesis.json
 
-Abrimos un terminal para cada nodo, todos corren con la misma base pero con parametris diferentes
+Abrimos un terminal para cada nodo, todos corren con la misma base pero con parametros diferentes
 
  - Nodo 1
  a)   ./geth --datadir nodo1 init ./genesis.json 
@@ -189,13 +189,7 @@ Abrimos un terminal para cada nodo, todos corren con la misma base pero con para
  - Nodo 2 
   a)   ./geth --datadir nodo2 init ./genesis.json 
 
-  b)   ./geth --datadir nodo2 --http --authrpc.port 8576 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "c1980b3f243e66c291fce254ab6b174cdb4a917a" --password pwd.txt --port 30011 --mine --bootnodes enode://da38bbca1ac511a3a9ed54656eb2efb888364c69edd6b858f064a85626427d530ddd7cdd7ffc8efee09805d683a46c3aa2eaa1c71a59003e14dac77f850797c8@127.0.0.1:0?discport=30301 --ipcpath "\\.\pipe\geth2.ipc"
-
-- Nodo 3 
-[[[ OJO, ESTE NODO NO LE SALE DE LA POLLA CORRER, DA ERROR CON EL RPC ]]]
- a)   ./geth --datadir nodo3 init ./genesis.json 
-
- b)     ./geth --datadir nodo3 --http --authrpc.port 8590 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "13892bbf6716901586a0226cf4768174d23f5272" --password pwd.txt --port 30012 --mine --bootnodes enode://9ca20262a093f941cd8e1a4ed58fa8a3b7f7b01ef9a176b36dff4614b18fbc794449fb6b2f6a040f120592b5823d1a9d5c4c16ac09707a75e098a00dc1429e97@127.0.0.1:0?discport=30301 --ipcpath "\\.\pipe\geth3.ipc"
+  b)   ./geth --datadir nodo2 --http --authrpc.port 8576 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "2fc2605958d2378ac66c142f1c0b5148d0995a7d" --password pwd.txt --port 30011 --mine --bootnodes enode://da38bbca1ac511a3a9ed54656eb2efb888364c69edd6b858f064a85626427d530ddd7cdd7ffc8efee09805d683a46c3aa2eaa1c71a59003e14dac77f850797c8@127.0.0.1:0?discport=30301 --ipcpath "\\.\pipe\geth2.ipc"
 
 Al final debemos tener:
    - 3 nodos con un JSON dentro
