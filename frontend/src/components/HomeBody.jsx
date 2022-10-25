@@ -1,4 +1,4 @@
-export const HomeBody = () =>{
+export function HomeBody() {
     return <div>
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -33,21 +33,9 @@ export const HomeBody = () =>{
                 <span className="visually-hidden">Next</span>
             </button>
         </div>
-
-        <h3>Pricing</h3>
-        <div className="row">
-            <div className="col-4 pricing">
-                <h5>Premium</h5>
-                <p>10.000€</p>
-            </div>
-            <div className="col-4 pricing">
-                <h5>Standar</h5>
-                <p>5.000€</p>
-            </div>
-            <div className="col-4 pricing">
-                <h5>Basic</h5>
-                <p>1.000€</p>
-            </div>
-        </div>
+        <p/>
+        <div className=" my-8 w-100 text-center alert alert-success" role="alert">
+  <h2>Pricings</h2>
+</div>
     </div>
 }
