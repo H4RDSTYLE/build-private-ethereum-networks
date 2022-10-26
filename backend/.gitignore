@@ -1,4 +1,5 @@
 node_modules
+ETH
 .env
 .env.development.local
 .env.test.local

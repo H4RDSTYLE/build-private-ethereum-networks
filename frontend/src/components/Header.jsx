@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react'
+
 const {ethereum} = window
+
 
 export const Header = () =>{
 
@@ -13,7 +15,7 @@ export const Header = () =>{
     // const ReturnToIndex = () => {
     //     navigate("/");
     // }
-    const [conectar, setConnection] = useState(null)
+    const [conectar, setConnection] = useState("Connect")
 
     async function Connect() {
             if (ethereum != undefined) {
@@ -23,7 +25,7 @@ export const Header = () =>{
                   setConnection(cuentas[0])
                   ethereum.on("accountsChanged", (cuentas) => {
                     if (cuentas.length == 0) {
-                        setConnection("Conectar")
+                        setConnection("Connect")
                     } else {
                         setConnection(cuentas[0])
                     }
@@ -44,18 +46,18 @@ export const Header = () =>{
               }
     }
 
-    useEffect(()=>{
-        setConnection("Conectar")
-    }, [])
-
+    // useEffect(()=>{
+    //     setConnection("Connect")
+    // }, [])
 
     return <nav id="NavigatorBar">
-        <NavLink to="/" className="m-3">Index</NavLink>
-        <NavLink to="/formulario" className="m-3">Build Private Ethereum Networks</NavLink>
+        <NavLink to="/" className="m-3">Home</NavLink>
+        {/* <NavLink to="/formulario" className="m-3">Build Private Ethereum Networks</NavLink> */}
         {/* <p onClick={ReturnToIndex}>Index</p> */}
         {/* <button onClick={handleClick} className="btn-success">Formulario</button> */}
-        <NavLink to="/formulario" className="m-3">Contact</NavLink>
-        <NavLink to="/formulario" className="m-3">Company</NavLink>
+        {/* <NavLink to="/formulario" className="m-3">Contact</NavLink> */}
+        {/* <NavLink to="/formulario" className="m-3">Company</NavLink> */}
+        <NavLink to="/formulario" className="m-3">Add network</NavLink>
         <NavLink to="/networks" className="m-3">Networks</NavLink>
         <NavLink onClick={(() => Connect())} id="ConnectButton" className="m-3"> { conectar } </NavLink>
     </nav>
