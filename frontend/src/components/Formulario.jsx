@@ -1,7 +1,8 @@
 import "../style/formulario.less"
 
-export const Formulario = () =>{
-  return <><br></br><div className="alert alert-success" role="alert">
+export const Formulario = () => {
+  return <div>
+    <div className="alert alert-success" role="alert">
       <h4 className="alert-heading">Create your own Private Blockchain!</h4>
       <p className="mb-0">Improve the performance of your company.</p>
       <hr></hr>
@@ -51,14 +52,14 @@ export const Formulario = () =>{
       </div>
       <div className="col-md-2">
         <label htmlFor="validationCustom05" className="form-label">Currency Symbol</label>
-        <input type="text" className="form-control" id="validationCustom05" required/>
+        <input type="text" className="form-control" id="validationCustom05" required />
         <div className="invalid-feedback">
           Please provide a currency symbol.
         </div>
       </div>
       <div className="col-12">
         <div className="form-check">
-          <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+          <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
           <label className="form-check-label" htmlFor="invalidCheck">
             Agree with terms and conditions
           </label>
@@ -69,7 +70,7 @@ export const Formulario = () =>{
       </div>
       <div className="col-12">
         <button type="button" className="btn btn-outline-success">Create my own Blockchain</button>  </div>
-    </form></>
+    </form></div>
 }
 
 export default Formulario;
