@@ -1,0 +1,72 @@
+{
+    "nodo": {
+        "network": 15,
+        "nodo": 2,
+        "network_dir": "ETH/eth15",
+        "dir_node": "ETH/eth15/nodo2",
+        "port": 30706,
+        "http_port": 9847,
+        "ipcpath": "\\\\.\\pipe\\333459-nodo2.ipc",
+        "address": [
+            "fe232a52771024e409dab0d4407e8d956d3ebf17"
+        ],
+        "chainId": 333459,
+        "authRpcPort": 9855,
+        "prefund": "0x200000000000000000000000000000000000000000000000000000000000000"
+    },
+    "subproceso": {
+        "_events": {},
+        "_eventsCount": 0,
+        "_closesNeeded": 1,
+        "_closesGot": 0,
+        "connected": false,
+        "signalCode": null,
+        "exitCode": null,
+        "killed": false,
+        "spawnfile": "geth",
+        "_handle": {
+            "pid": 16488
+        },
+        "spawnargs": [
+            "geth",
+            "--networkid",
+            333459,
+            "--mine",
+            "--syncmode",
+            "full",
+            "--datadir",
+            "ETH/eth15/nodo2",
+            "--http",
+            "--http.corsdomain",
+            "*",
+            "--graphql",
+            "--http.port",
+            9847,
+            "--http.api",
+            "clique,admin,eth,miner,net,txpool,personal,web3",
+            "--allow-insecure-unlock",
+            "--unlock",
+            "fe232a52771024e409dab0d4407e8d956d3ebf17",
+            "--password",
+            "ETH/eth15/nodo2/pwd",
+            "--port",
+            30706,
+            "--authrpc.port",
+            9855,
+            "--ipcpath",
+            "\\\\.\\pipe\\333459-nodo2.ipc",
+            "--nodiscover",
+            "--trace",
+            "ETH/eth15/nodo2/trace.txt"
+        ],
+        "pid": 16488,
+        "stdin": null,
+        "stdout": null,
+        "stderr": null,
+        "stdio": [
+            null,
+            null,
+            null
+        ]
+    }
+}

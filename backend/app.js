@@ -27,7 +27,7 @@ app.use("*", (req, res) =>{
     res.status(404).send("NOT FOUND ")
 })
 
-const PORT = process.env.PORT || 3333
+const PORT = process.env.PORT || 3334
 app.listen(PORT, () => {
     console.log("escuchando ", PORT)
 })
