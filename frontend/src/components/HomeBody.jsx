@@ -11,7 +11,7 @@ export function HomeBody() {
                 <div className="carousel-item active">
                     <img className="d-block w-100" src="../images/activos.png" alt="First slide" />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Se parte del presente</h5>
+                        <h5>Sé parte del presente</h5>
                         <span>No te quedes por fuera, la revolución tecnológica no es cosa del futuro.</span>
                     </div>
                 </div>
