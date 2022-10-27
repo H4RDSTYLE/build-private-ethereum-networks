@@ -269,3 +269,15 @@ router.get("/procesos/:network", async (req, res) => {
     const output = nodos.map(i => JSON.parse(fs.readFileSync(`${NETWORK_DIR}/${i.name}/paramsNodo.json`)))
     res.send(output)
 })
+
+router.get("/", async (req, res) => {
+
+    const redes = fs.readdirSync("ETH", { withFileTypes: true }).filter(i => !i.isFile())
+    const output = redes.map(i => {
+        const genesis = JSON.parse(fs.readFileSync(`ETH/${i.name}/genesis.json`))
+        const cuentas = Object.keys(genesis.alloc)
+        return { numero: i.name, chainid: genesis.config.chainId, cuentas: cuentas }
+    }
+    )
+    res.send(output)
+})

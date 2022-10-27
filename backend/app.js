@@ -23,7 +23,7 @@ app.use("/faucet", faucet)
 
 
 // ruta not found
-app.use("*", (req, res) =>{
+app.use("*", (req, res) => {
     res.status(404).send("NOT FOUND ")
 })
 

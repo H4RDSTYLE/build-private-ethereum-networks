@@ -1,26 +1,22 @@
-###
-POST http://127.0.0.1:3334/network/create/1/1
+POST http://localhost:3334/network/create/10/1 
 
 ###
-POST http://127.0.0.1:3334/network/add/1/3
+POST http://localhost:3334/network/add/3/2
 
 ###
-POST http://localhost:3333/network/create/2/1 
+POST http://localhost:3334/network/add/3/3
 
 ###
-POST http://localhost:3333/network/add/2/2
+DELETE http://localhost:3334/node/2/1 HTTP/1.1
 
 ###
-POST http://localhost:3333/network/add/2/3
+delete http://localhost:3334/network/2
 
 ###
-DELETE http://localhost:3333/node/2/1 HTTP/1.1
+get http://localhost:3334/network/procesos/19
 
 ###
-delete http://localhost:3333/network/2
+get http://localhost:3334/network/reload/3
 
 ###
-get http://localhost:3333/network/procesos/19
-
-###
-get http://localhost:3333/network/reload/2
+get http://localhost:3334/network
