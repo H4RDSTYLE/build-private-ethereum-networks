@@ -197,7 +197,29 @@ Al final debemos tener:
    - El genesis.json también fuera, pues lo hemos exportado
 
 
+# Limpieza
+Hemos hecho limpieza del proyecto. Hay que eliminar las carpetas y archivos sobrantes,
+para al final dejar sólo la carpeta backend, frontend, y los archivos README.md, yarn-error.log y yarn.lock.
+El resto de archivos y carpetas del directorio raíz se pueden borrar.
 
 
+## Lanzar el frontend
+Hay que entrar a VisualStudioCOde, al proyecto, abrir una terminal, y moverse a la carpeta frontend.
+Tras entrar al proyecto y abrir una terminal, hay que ejecutar "cd ./frontend" (sin comillas) y eso nos
+moverá a la carpeta frontend. Después hay que ejecutar "yarn dev". Si diese algún error, probablemente
+haya que ejecutar "yarn", y luego "yarn dev" de nuevo.
 
+## Lanzar el backend
+Igual que en el punto anterior, abrir una terminal nueva, hacer "cd ./backend", y después ejecutar 
+"npx nodemon app.js".
+Es posible que aquí también salga algún error, y haya que ejecutar alguno (o varios) de los siguientes
+comandos, en función de qué error esté dando:
+yarn add cors
+yarn add express
+yarn add ps-node
 
+### Lanzar peticiones
+Hay que tener lanzado el backend, e instalada la extensión REST Client.
+Entonces nos vamos al archivo peticiones.http, y le daremos a "Send request" en función de cuál queramos lanzar.
+Por ejemplo la primera petición, nos creará una carpeta (en caso de qu eno exista) llamada ETH, con
+el número de la red que pongamos, y el número de nodo.
