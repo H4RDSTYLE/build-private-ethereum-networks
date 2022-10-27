@@ -1,79 +1,84 @@
 {
-    "precios":[
+    "precios": [
         {
-            "titulo":"1000$",
-            "precio":"$0",
-            "por":"month",
-            "textBoton":"sign up for free",
-            "features":[
+            "titulo": "1000$",
+            "precio": "$0",
+            "por": "month",
+            "textBoton": "Plan básico",
+            "features": [
                 "10 Nodos",
                 "2GB",
                 "Email",
-                "Customer service "
+                "Atención al cliente "
             ]
         },
         {
-            "titulo":"5000$",
-            "precio":"$0",
-            "por":"month",
-            "textBoton":"sign up for free",
-            "features":[
+            "titulo": "5000$",
+            "precio": "$0",
+            "por": "month",
+            "textBoton": "Plan entrepreneur",
+            "features": [
                 "20 Nodos",
-                "2GB",
+                "4GB",
                 "Email",
-                "Customer Service"
+                "Atención al cliente"
             ]
         },
         {
-            "titulo":"10.000$",
-            "precio":"$0",
-            "por":"month",
-            "textBoton":"sign up for free",
-            "features":[
+            "titulo": "10.000$",
+            "precio": "$0",
+            "por": "month",
+            "textBoton": "Plan empresarial",
+            "features": [
                 "30 Nodos",
-                "2GB",
+                "8GB",
                 "Email",
-                "Customer Service"
+                "Atención al cliente"
             ]
         }
     ],
-        "footer": [
-            {
-                "titulo": "social",
-                "links": [
-                    {
-                        "titulo": "youtube",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Twitter",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Instagram",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Facebook",
-                        "url": "http://..."
-                    }
-                ]
-            },
-            {
-                "titulo": "Help",
-                "links": [
-                    {
-                        "titulo": "Contact",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Email",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Privacy",
-                        "url": "http://..."
-                    },   {
-                        "titulo": "Term and conditions",
-                        "url": "http://..."
-                    }
-                ]
-            }
-        ]
-    
+    "footer": [
+        {
+            "titulo": "social",
+            "links": [
+                {
+                    "titulo": "youtube",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Twitter",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Instagram",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Facebook",
+                    "url": "http://..."
+                }
+            ]
+        },
+        {
+            "titulo": "Help",
+            "links": [
+                {
+                    "titulo": "Contact",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Email",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Privacy",
+                    "url": "http://..."
+                },
+                {
+                    "titulo": "Term and conditions",
+                    "url": "http://..."
+                }
+            ]
+        }
+    ]
 }
