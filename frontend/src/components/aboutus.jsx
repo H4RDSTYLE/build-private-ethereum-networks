@@ -8,7 +8,7 @@ export function AboutUs() {
             <div className="row text-center text-dark">
                 <div className="col-lg-8 mx-auto">
                     <h1 className="display-4">Nuestro equipo</h1>
-                    <p className="lead mb-0">We see ourselves as much more than just a studio, but as a family of like-minded, kind and talented people who love to collaborate and make awesome sh*t together.</p>
+                    <p className="lead mb-0">Nos vemos a nosotros mismos como mucho más que un estudio, sino como una familia de personas con ideas afines, amables y talentosas a las que les encanta colaborar y hacer m*erdas increíbles juntas.</p>
 
                 </div>
             </div>
