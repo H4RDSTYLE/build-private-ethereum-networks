@@ -61,6 +61,7 @@ export const Header = () => {
     <NavLink to="/formulario" className="m-3">Add network</NavLink>
     <NavLink to="/networks" className="m-3">Networks</NavLink>
     <NavLink to="/precios" className="m-3">Nuestros precios</NavLink>
+    <NavLink to="/aboutus" className="m-3">Quienes somos</NavLink>
     <NavLink to="/explorerh" className="m-3">Explorer</NavLink>
     <NavLink onClick={(() => Connect())} id="ConnectButton" className="m-3"> {conectar} </NavLink>
   </nav>
