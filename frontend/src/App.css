@@ -56,3 +56,10 @@ nav > a:hover, footer > a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#NoNetworksMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
