@@ -5,7 +5,11 @@ import { Home } from './Home'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { Precios } from './components/Precios'
 import { Formulario } from './components/Formulario'
-import { Networks } from './components/Networks';
+import { Networks } from './components/Networks'
+import { ExplorerH } from './components/Explorer/ExplorerH'
+import { Balance } from './components/Explorer/Balance'
+import { Bloque } from './components/Explorer/Bloque'
+import { Tx } from './components/Explorer/Tx'
 
 const queryClient = new QueryClient();
 export const App = () => {
@@ -20,6 +24,12 @@ export const App = () => {
                     <Route path="/networks" element={<Networks />}></Route>
                     <Route path="/precios" element={<Precios />}></Route>
                     <Route path="*" element="Error 404, aquí no es"></Route>
+                    <Route path="/explorerh" element={<ExplorerH/>}>
+                        <Route path="balance/:address" element={<Balance/>}></Route>
+                        <Route path="tx/:tx" element={<Tx/>}></Route>
+                        <Route path="bloque/:bloque" element={<Bloque/>}></Route>
+                        <Route path="noencontrada" element={<h2>no se puede procesar dato</h2>}></Route>
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
