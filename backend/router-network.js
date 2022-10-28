@@ -111,6 +111,7 @@ function generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWOR
 
 }
 router.post("/create/:network/:node", (req, res) => {
+    
     const NUMERO_NETWORK = parseInt(req.params.network)
     const NUMERO_NODO = parseInt(req.params.node)
     const parametros = generateParameter(NUMERO_NETWORK, NUMERO_NODO)
@@ -128,25 +129,23 @@ router.post("/create/:network/:node", (req, res) => {
         MICUENTA
 
     ]
-
+    
     generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWORK_DIR)
 
     // INICIALIZAMOS EL NODO
     const comando = `geth --datadir ${DIR_NODE} init ${NETWORK_DIR}/genesis.json`
 
     const result = exec(comando, (error, stdout, stderr) => {
-        console.log("ejecutado")
         if (error) {
             res.send({ error })
             return
         }
-        const resultado = launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE,
-            NETWORK_DIR, IPCPATH, NETWORK_CHAINID,
-            HTTP_PORT, CUENTA, PORT, AUTHRPC_PORT, BALANCE, CUENTAS_ALLOC)
-
-        res.send(resultado)
     })
+    const resultado = launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE,
+        NETWORK_DIR, IPCPATH, NETWORK_CHAINID,
+        HTTP_PORT, CUENTA, PORT, AUTHRPC_PORT, BALANCE, CUENTAS_ALLOC)
 
+    res.send(resultado)
 
 })
 
