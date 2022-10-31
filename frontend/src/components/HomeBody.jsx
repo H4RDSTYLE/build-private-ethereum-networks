@@ -9,7 +9,7 @@ export function HomeBody() {
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="d-block w-100" src="../images/btc.jpg" alt="First slide" />
+                    <img className="d-block w-100" src="../images/activos.png" alt="First slide" />
                     <div className="carousel-caption d-none d-md-block">
                         <h5>Sé parte del presente</h5>
                         <span>No te quedes por fuera, la revolución tecnológica no es cosa del futuro.</span>
@@ -137,13 +137,13 @@ export function HomeBody() {
                                 <h4 className="text-uppercase m-0 ">Saber más</h4>
                                 <hr className="my-4 mx-auto " href="#!" />
                                 <p></p>
-                                <span><AiOutlineTwitter /> Twitter</span>
+                                <span><a href="https://twitter.com/?lang=es" target="_blank"><AiOutlineTwitter /> Twitter</a></span>
                                 <p></p>
-                                <span><FaTelegramPlane /> Telegram</span>
+                                <span><a href="https://web.telegram.org/z/"target="_blank"><FaTelegramPlane /> Telegram</a></span>
                                 <p></p>
-                                <span><AiOutlineInstagram /> Instagram</span>
+                                <span><a href="https://www.instagram.com/"target="_blank"><AiOutlineInstagram /> Instagram</a></span>
                                 <p></p>
-                                <span><BsDiscord /> Discord</span>
+                                <span><a href="https://discord.com/"target="_blank"><BsDiscord /> Discord</a></span>
                             </div>
                         </div>
                     </div>
