@@ -20,9 +20,6 @@ export const Formulario = () => {
         <div className="col-6">
           <label htmlFor="validationCustom02" className="form-label">Chain ID</label>
           <input type="number" value={networkNumber} onChange={e => setNumber(e.target.value)} min="0" className="form-control" id="validationCustom02" required></input>
-          <div className="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div className="col-6">
           <button type="button" onClick={CreateNetwork} className="btn btn-outline-success" disabled={Disabled}>Create my own Blockchain</button>  </div>

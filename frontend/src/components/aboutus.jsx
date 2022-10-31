@@ -51,7 +51,7 @@ export function AboutUs() {
                 <div className="col-xl-4 col-sm-6 mb-5">
                     <div className="bg-white rounded shadow-sm py-5 px-4">
                         <img src="https://i.seadn.io/gae/mclJXFCGAV0HLJladu3BzTpTEDqI9w74dzAmyh99-M7XQDgWDYz7STG6q5icgdYMxzh5VhwvVTUa_io-SXFuA-HjjwRfd_eFsAImSw?auto=format&w=1000" alt="Monkey NFT image" width="180" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
-                        <h5 className="mb-0">Javi Carzola</h5><span className="small text-uppercase text-muted">CEO - Founder</span>
+                        <h5 className="mb-0">Javi Cazorla</h5><span className="small text-uppercase text-muted">CEO - Founder</span>
                         <ul className="social mb-0 list-inline mt-2">
                             <a href='https://www.linkedin.com/in/javi-cazorla/' target="_blank" className='cursorPointer'><BsLinkedin /></a>
                         </ul>

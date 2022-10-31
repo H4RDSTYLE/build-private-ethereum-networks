@@ -6,6 +6,7 @@ const app = express()
 const networks = require("./router-network")
 const node = require("./router-node")
 const faucet = require("./router-faucet")
+const explorer = require("./explorer")
 
 app.use(morgan('combined'))
 app.use(cors())
@@ -17,9 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/network", networks)
 app.use("/node", node)
 app.use("/faucet", faucet)
-
-
-
+app.use("/explorer", explorer)
 
 
 // ruta not found
@@ -29,5 +28,5 @@ app.use("*", (req, res) => {
 
 const PORT = process.env.PORT || 3334
 app.listen(PORT, () => {
-    console.log("escuchando ", PORT)
+    console.log("Escuchando ", PORT)
 })

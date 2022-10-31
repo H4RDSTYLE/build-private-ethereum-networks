@@ -18,6 +18,7 @@ export const Header = () => {
   // }
   const [conectar, setConnection] = useState("Connect")
 
+
   async function Connect() {
     if (ethereum != undefined) {
       ethereum.request({ method: 'eth_requestAccounts' }).then(cuentas => {
@@ -50,6 +51,8 @@ export const Header = () => {
   // useEffect(()=>{
   //     setConnection("Connect")
   // }, [])
+
+
 
   return <nav id="NavigatorBar">
     <NavLink to="/" className="m-3">Home</NavLink>
