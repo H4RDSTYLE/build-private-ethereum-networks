@@ -11,6 +11,8 @@ import { Balance } from './components/Explorer/Balance'
 import { Bloque } from './components/Explorer/Bloque'
 import { Tx } from './components/Explorer/Tx'
 import { AboutUs } from './components/aboutus';
+import { Privacy } from './components/Privacy';
+import { TermsAndConditions } from './components/TermsAndConditions';
 
 const queryClient = new QueryClient();
 export const App = () => {
@@ -25,6 +27,8 @@ export const App = () => {
                     <Route path="/networks" element={<Networks />}></Route>
                     <Route path="/precios" element={<Precios />}></Route>
                     <Route path="/aboutus" element={<AboutUs />}></Route>
+                    <Route path="/privacy" element={<Privacy />}></Route>
+                    <Route path="/termsandconditions" element={<TermsAndConditions />}></Route>
                     <Route path="*" element="Error 404, aquí no es"></Route>
                     <Route path="/explorerh" element={<ExplorerH />}>
                         <Route path="balance/:address" element={<Balance />}></Route>
