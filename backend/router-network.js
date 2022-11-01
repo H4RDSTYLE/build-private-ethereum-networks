@@ -265,7 +265,10 @@ router.get("/procesos/:network", async (req, res) => {
     const NUMERO_NETWORK = parseInt(req.params.network)
     const NETWORK_DIR = `ETH/eth${NUMERO_NETWORK}`
     const nodos = fs.readdirSync(NETWORK_DIR, { withFileTypes: true }).filter(i => !i.isFile())
-    const output = nodos.map(i => JSON.parse(fs.readFileSync(`${NETWORK_DIR}/${i.name}/paramsNodo.json`)))
+    const output = nodos.map(i => {
+        var data = JSON.parse(fs.readFileSync(`${NETWORK_DIR}/${i.name}/paramsNodo.json`))
+        return { nodo: data.nodo }
+    })
     res.send(output)
 })
 
