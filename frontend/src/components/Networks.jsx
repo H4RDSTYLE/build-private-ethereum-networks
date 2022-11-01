@@ -1,4 +1,5 @@
-import { useQuery } from "react-query"
+import { useQuery } from "react-query";
+import { NavLink, Link } from "react-router-dom";
 
 export const Networks = () => {
 
@@ -35,7 +36,7 @@ export const Networks = () => {
             </div>
         } else {
             return <div>
-            <h2>Networks list</h2>
+            <h2 className="m-4 text-center">Networks list</h2>
             <table className="table">
                 <thead>
                     <tr>
@@ -48,7 +49,7 @@ export const Networks = () => {
                 <tbody>
                     {
                         data.map((item, index) => <tr key={index}>
-                            <td>{item.numero}</td>
+                            <td><Link to={`/nodes/${item.numero.split("eth").pop()}`}>{item.numero}</Link></td>
                             <td>{item.chainid}</td>
                             <td>{item.cuentas.map((cuenta) => <div key={cuenta}>0x{cuenta}</div>)}</td>
                             <td><button type="button" onClick={() => DeleteNetwork(item.numero)} className="btn btn-outline-danger">Delete network</button></td>

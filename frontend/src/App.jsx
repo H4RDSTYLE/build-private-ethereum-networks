@@ -11,6 +11,9 @@ import { Balance } from './components/Explorer/Balance'
 import { Bloque } from './components/Explorer/Bloque'
 import { Tx } from './components/Explorer/Tx'
 import { AboutUs } from './components/aboutus';
+import { Privacy } from './components/Privacy';
+import { TermsAndConditions } from './components/TermsAndConditions';
+import { Nodes } from './components/Nodos/Nodes';
 
 const queryClient = new QueryClient();
 export const App = () => {
@@ -23,8 +26,11 @@ export const App = () => {
                     <Route path="/whoami" element="nosotros"></Route> //TODO! Falta crear este elemento
                     <Route path="/formulario" element={<Formulario />}></Route>
                     <Route path="/networks" element={<Networks />}></Route>
+                    <Route path="/nodes/:network" element={<Nodes/>}></Route>
                     <Route path="/precios" element={<Precios />}></Route>
                     <Route path="/aboutus" element={<AboutUs />}></Route>
+                    <Route path="/privacy" element={<Privacy />}></Route>
+                    <Route path="/termsandconditions" element={<TermsAndConditions />}></Route>
                     <Route path="*" element="Error 404, aquí no es"></Route>
                     <Route path="/explorerh" element={<ExplorerH />}>
                         <Route path="balance/:address" element={<Balance />}></Route>
