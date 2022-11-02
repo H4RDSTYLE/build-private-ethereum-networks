@@ -1,0 +1,3 @@
+docker run -d -p 8545:8545 -p30303:30303 -v ${PWD}/data:/data -v ${PWD}/genesis.json:/genesis.json --name eth-node ethereum/client-go init --datadir data /genesis.json
+
+docker run -d -p 8545:8545 -p30303:30303 -v ${PWD}/data:/data  --name eth-node-01 ethereum/client-go --datadir data --http.api personal,eth,net,web3 --http --http.addr 0.0.0.0 --http.port 8545 --mine --miner.etherbase 0x38a4F5E0b378eaBcF0A29B75FAa5B9E55af736dA --miner.threads=1

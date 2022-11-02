@@ -51,7 +51,7 @@ const lista = fs.readdirSync(`${DIR_NODE}/keystore`)
 const CUENTA = JSON.parse(fs.readFileSync(`${DIR_NODE}/keystore/${lista[0]}`).toString()).address
 
 const CUENTAS_ALLOC = [
-   "704765a908962e25626f2bea8cdf96c84dedaa0b"
+   "DB1eDF3025403760c489d8Ce7708B8cf22E76B02"
   // CUENTA
 ]
 const timestamp = Math.round(((new Date()).getTime() / 1000)).toString(16)
@@ -223,7 +223,19 @@ Entonces nos vamos al archivo peticiones.http, y le daremos a "Send request" en 
 Por ejemplo la primera petición, nos creará una carpeta (en caso de qu eno exista) llamada ETH, con
 el número de la red que pongamos, y el número de nodo.
 
+<<<<<<< HEAD
 ### Hacer
 - Modificar de Routernetwork y de genesisbase la billetera de Jose
 - Cambiar de sitio el pwd.txt (Router-Network.js, linea 29 - linea 87)
 - Probar a ver si funciona
+=======
+
+geth --datadir nodo1 init genesis.json
+
+geth --datadir nodo1 --http --http.port 9766 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "DIRECC" --password pwd --port 30565 --mine --ipcdisable console
+
+### Hacer
+- Modificar de Routernetwork y de genesisbase la billetera de Jose
+- Cambiar de sitio el pwd.txt (Router-Network.js, linea 29 - linea 87)
+- Probar a ver si funciona
+>>>>>>> 10366fbf07cddd160096c8333ded3e9c6c36ef63

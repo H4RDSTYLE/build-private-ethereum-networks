@@ -9,8 +9,9 @@ const { send } = require("process");
 module.exports = router
 
 const PASSWORD = "123456"
-const BALANCE = "0x200000000000000000000000000000000000000000000000000000000000000"
-const MICUENTA = "704765a908962e25626f2bea8cdf96c84dedaa0b"
+const BALANCE = "0x2000000000000000000000000000000"
+const MICUENTA = "DB1eDF3025403760c489d8Ce7708B8cf22E76B02"
+const CuentaRobert = "C2B5e9517Fd08339409088B8b4C179011cB8bD1F"
 
 function launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE, NETWORK_DIR,
     IPCPATH, NETWORK_CHAINID, HTTP_PORT, CUENTA, PORT,
@@ -19,6 +20,16 @@ function launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE, NETWORK_DIR,
 
     const out2 = fs.openSync(`./${DIR_NODE}/outNodo.log`, 'a');
     const err2 = fs.openSync(`./${DIR_NODE}/outNodo.log`, 'a');
+    console.log();
+    console.log();
+    console.log("===================");
+    console.log("Dir node: "+DIR_NODE+", networkdir: "+NETWORK_DIR);
+    console.log("===================");
+    console.log();
+    console.log();
+    //geth --datadir ${DIR_NODE} --http --http.port ${HTTP_PORT} --http.api admin,eth,miner,net,txpool,personal,web3 
+    //--allow-insecure-unlock --unlock "${CUENTA}" --password ${DIR_NODE}/pwd 
+    //--port ${PORT} --mine --ipcdisable console
     const params = [
         "--networkid", NETWORK_CHAINID,
         '--mine',
@@ -77,6 +88,7 @@ function createIfNotExists(path) {
     if (!fs.existsSync(path))
         fs.mkdirSync(path)
 }
+
 function deleteIfExists(path) {
     if (fs.existsSync(path))
         fs.rmdirSync(path, { recursive: true, })
@@ -91,6 +103,7 @@ function createAccount(DIR_NODE) {
     const CUENTA = JSON.parse(fs.readFileSync(`${DIR_NODE}/keystore/${lista[0]}`).toString()).address
     return CUENTA
 }
+
 function generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWORK_DIR) {
     const timestamp = Math.round(((new Date()).getTime() / 1000)).toString(16)
     // leemos la plantilla del genesis
@@ -110,6 +123,7 @@ function generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWOR
     fs.writeFileSync(`${NETWORK_DIR}/genesis.json`, JSON.stringify(genesis))
 
 }
+
 router.post("/create/:network/:node", (req, res) => {
     
     const NUMERO_NETWORK = parseInt(req.params.network)
@@ -126,24 +140,37 @@ router.post("/create/:network/:node", (req, res) => {
     const CUENTA = createAccount(DIR_NODE)
     const CUENTAS_ALLOC = [
         CUENTA,
-        MICUENTA
-
+        MICUENTA,
+        CuentaRobert
     ]
     
     generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWORK_DIR)
 
     // INICIALIZAMOS EL NODO
-    const comando = `geth --datadir ${DIR_NODE} init ${NETWORK_DIR}/genesis.json`
-
-    const result = exec(comando, (error, stdout, stderr) => {
-        if (error) {
-            res.send({ error })
-            return
-        }
-    })
+    const comando = `geth --datadir ${DIR_NODE} init ${NETWORK_DIR}/genesis.json`    
+    exec(comando, (error, stdout, stderr) => {})
     const resultado = launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE,
         NETWORK_DIR, IPCPATH, NETWORK_CHAINID,
         HTTP_PORT, CUENTA, PORT, AUTHRPC_PORT, BALANCE, CUENTAS_ALLOC)
+        console.log();
+        console.log();
+        console.log("===================");
+        console.log("Dir node: "+DIR_NODE+", networkdir: "+NETWORK_DIR);
+        console.log("===================");
+        console.log();
+        console.log();
+    
+
+    const comando2 = `geth --datadir ${DIR_NODE} --http --http.port ${HTTP_PORT} --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "${CUENTA}" --password ${DIR_NODE}/pwd --port ${PORT} --mine --ipcdisable console`
+    console.log();
+    console.log();
+    console.log("===================");
+    console.log(comando2);
+    console.log("===================");
+    console.log();
+    console.log();
+    // exec(comando2, (error, stdout, stderr) => {})
+
 
     res.send(resultado)
 
@@ -191,7 +218,6 @@ router.delete("/:network", (req, res) => {
         } catch (error) {
             return null
         }
-
     }
     )
 
