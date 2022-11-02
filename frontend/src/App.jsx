@@ -14,6 +14,7 @@ import { AboutUs } from './components/aboutus';
 import { Privacy } from './components/Privacy';
 import { TermsAndConditions } from './components/TermsAndConditions';
 import { Nodes } from './components/Nodos/Nodes';
+import { Faucet } from './components/Faucet';
 
 const queryClient = new QueryClient();
 export const App = () => {
@@ -28,6 +29,7 @@ export const App = () => {
                     <Route path="/networks" element={<Networks />}></Route>
                     <Route path="/nodes/:network" element={<Nodes/>}></Route>
                     <Route path="/precios" element={<Precios />}></Route>
+                    <Route path="/faucet" element={<Faucet />}></Route>
                     <Route path="/aboutus" element={<AboutUs />}></Route>
                     <Route path="/privacy" element={<Privacy />}></Route>
                     <Route path="/termsandconditions" element={<TermsAndConditions />}></Route>
