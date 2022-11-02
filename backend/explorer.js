@@ -4,7 +4,7 @@ const Web3 = require("Web3")
 
 module.exports = router
 
-const culo = "http://localhost:8575"
+const culo = "http://localhost:9606"//PONER EL PUERTO DEL NODO QUE ESTË LANZADO
 const web3 = new Web3(culo)
 
 router.get("/", async (req, res) => {

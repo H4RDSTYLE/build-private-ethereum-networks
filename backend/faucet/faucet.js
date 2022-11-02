@@ -5,7 +5,7 @@ const app = express()
 app.use(cors())
 // toma el fichero.env y crea variables accesible por process.env.nombre
 require("dotenv").config()
-const web3 = new Web3("http://localhost:8545")//Modificar puerto
+const web3 = new Web3("http://localhost:9606")//Modificar puerto
 
 app.get("/ping", (req, res) => {
     res.send({fecha:new Date().toISOString()})
@@ -22,7 +22,7 @@ app.get("/enviar/:cuenta", async (req, res) => {
         to: req.params.cuenta,
         from: process.env.ADDRESS,// la cuenta viene desde el archivo .env
         value: 10E18,
-        gas: 2000000
+        gas: 200000
     },  process.env.PRIVATE_KEY)// llave privada desde archivo .enc
      //enviar la tx al provider
     const txSended = await web3.eth.sendSignedTransaction(
@@ -34,6 +34,6 @@ app.get("/enviar/:cuenta", async (req, res) => {
 
 
 })
-app.listen(4000, () =>{
+app.listen(3338, () =>{
     console.log("listen")
 })

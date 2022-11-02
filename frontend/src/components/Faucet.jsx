@@ -11,7 +11,7 @@ export function Faucet() {
 
   async function enviarEth(){
     setIsLoading(true)
-    const response = await fetch(`http://localhost:4000/enviar/${cuenta}`)
+    const response = await fetch(`http://localhost:3338/enviar/${cuenta}`)
     if (response.status == "200"){
     const datos = await response.json();
     await buscarSaldo(cuenta)
@@ -21,7 +21,7 @@ export function Faucet() {
   }
   
   async function buscarSaldo(cuenta) {
-    const response = await fetch(`http://localhost:4000/balance/${cuenta}`)
+    const response = await fetch(`http://localhost:3338/balance/${cuenta}`)
     if (response.status == "200"){
     const datos = await response.json();
     setSaldo(datos)
@@ -45,7 +45,7 @@ export function Faucet() {
     <div className="container">
       <div>Cuenta: {cuenta}</div>
       <div>Saldo = {JSON.stringify(saldo)}</div>
-      {!isLoading && <button onClick={()=> enviarEth()} className='mt-3 btn btn-primary'>Enviar 10 ETH</button>}
+      {!isLoading && <button onClick={()=> enviarEth()} className='mt-3 btn btn-primary'>Enviar 1 ETH</button>}
       {isLoading && <div>Se esta realizando la tx</div>}
   </div>
   )
