@@ -12,6 +12,7 @@ const PASSWORD = "123456"
 const BALANCE = "0x2000000000000000000000000000000"
 const MICUENTA = "DB1eDF3025403760c489d8Ce7708B8cf22E76B02"
 const CuentaRobert = "C2B5e9517Fd08339409088B8b4C179011cB8bD1F"
+const CuentaMax = "660461D60EDB45e62c521E0Cfda789a6aa28A427"
 
 function launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE, NETWORK_DIR,
     IPCPATH, NETWORK_CHAINID, HTTP_PORT, CUENTA, PORT,
@@ -23,7 +24,7 @@ function launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE, NETWORK_DIR,
     console.log();
     console.log();
     console.log("===================");
-    console.log("Dir node: "+DIR_NODE+", networkdir: "+NETWORK_DIR);
+    console.log("Dir node: " + DIR_NODE + ", networkdir: " + NETWORK_DIR);
     console.log("===================");
     console.log();
     console.log();
@@ -125,7 +126,7 @@ function generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWOR
 }
 
 router.post("/create/:network/:node", (req, res) => {
-    
+
     const NUMERO_NETWORK = parseInt(req.params.network)
     const NUMERO_NODO = parseInt(req.params.node)
     const parametros = generateParameter(NUMERO_NETWORK, NUMERO_NODO)
@@ -141,25 +142,26 @@ router.post("/create/:network/:node", (req, res) => {
     const CUENTAS_ALLOC = [
         CUENTA,
         MICUENTA,
-        CuentaRobert
+        CuentaRobert,
+        CuentaMax
     ]
-    
+
     generateGenesis(NETWORK_CHAINID, CUENTA, BALANCE, CUENTAS_ALLOC, NETWORK_DIR)
 
     // INICIALIZAMOS EL NODO
-    const comando = `geth --datadir ${DIR_NODE} init ${NETWORK_DIR}/genesis.json`    
-    exec(comando, (error, stdout, stderr) => {})
+    const comando = `geth --datadir ${DIR_NODE} init ${NETWORK_DIR}/genesis.json`
+    exec(comando, (error, stdout, stderr) => { })
     const resultado = launchNode(NUMERO_NETWORK, NUMERO_NODO, DIR_NODE,
         NETWORK_DIR, IPCPATH, NETWORK_CHAINID,
         HTTP_PORT, CUENTA, PORT, AUTHRPC_PORT, BALANCE, CUENTAS_ALLOC)
-        console.log();
-        console.log();
-        console.log("===================");
-        console.log("Dir node: "+DIR_NODE+", networkdir: "+NETWORK_DIR);
-        console.log("===================");
-        console.log();
-        console.log();
-    
+    console.log();
+    console.log();
+    console.log("===================");
+    console.log("Dir node: " + DIR_NODE + ", networkdir: " + NETWORK_DIR);
+    console.log("===================");
+    console.log();
+    console.log();
+
 
     const comando2 = `geth --datadir ${DIR_NODE} --http --http.port ${HTTP_PORT} --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --unlock "${CUENTA}" --password ${DIR_NODE}/pwd --port ${PORT} --mine --ipcdisable console`
     console.log();
