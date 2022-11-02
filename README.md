@@ -232,3 +232,25 @@ geth --datadir nodo1 --http --http.port 9766 --http.api admin,eth,miner,net,txpo
 - Modificar de Routernetwork y de genesisbase la billetera de Jose
 - Cambiar de sitio el pwd.txt (Router-Network.js, linea 29 - linea 87)
 - Probar a ver si funciona
+
+
+### Importante
+Reiniciar el pc xd
+Crear el archivo .env en el directorio backend/faucet y ponerle dos parámetros:
+PRIVATE_KEY=0xTU CLAVE PRIVADA
+ADDRESS=TU DIRECCIÓN DE METAMASK
+Abrir una consola e ir a backend/faucet y hacer yarn add dotenv
+Lanzar vscode y abrir 4 terminales
+La primera terminal lanzar cd ./frontend y yarn dev
+En la segunda terminal cd./backend y node app.js (o npx nodemon app.js)
+En la tercera la dejamos tal cual (luego pegaremos un comando que nos de el backend)
+En la cuarta hacemos cd ./backend/faucet y node faucet.js
+
+Vamos a la app en la web y creamos una red
+vamos a la terminal del backend y copiamos el comando que aparece entre signos de igual (=)
+Vamos a la tercera terminal y lo pegamos
+Si todo ha ido bien el nodo debería estar corriendo y debería conectarse al networkID
+En el explorer.js y faucet.js deberíamos sustituir las url por el puerto de nuestro nodo (port)
+Reiniciar el backend (app.js) y la faucet.js
+Conectamos metamask a la web, y agregamos la red con los parámetros de NodeParams (el networkID y el port)
+Ya deberíamos poder buscar en el explorer las cuentas con fondos, y desde la faucet hacer transacciones
