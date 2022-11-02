@@ -222,3 +222,8 @@ Hay que tener lanzado el backend, e instalada la extensión REST Client.
 Entonces nos vamos al archivo peticiones.http, y le daremos a "Send request" en función de cuál queramos lanzar.
 Por ejemplo la primera petición, nos creará una carpeta (en caso de qu eno exista) llamada ETH, con
 el número de la red que pongamos, y el número de nodo.
+
+### Hacer
+- Modificar de Routernetwork y de genesisbase la billetera de Jose
+- Cambiar de sitio el pwd.txt (Router-Network.js, linea 29 - linea 87)
+- Probar a ver si funciona
