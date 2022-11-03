@@ -1,4 +1,4 @@
-import { useState, useSyncExternalStore } from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import './App.css'
 const { ethereum } = window
@@ -11,7 +11,7 @@ export function Faucet() {
 
   async function enviarEth(){
     setIsLoading(true)
-    const response = await fetch(`http://localhost:3338/enviar/${cuenta}`)
+    const response = await fetch(`http://localhost:3334/faucet/enviar/${cuenta}`)
     if (response.status == "200"){
     const datos = await response.json();
     await buscarSaldo(cuenta)
@@ -21,7 +21,7 @@ export function Faucet() {
   }
   
   async function buscarSaldo(cuenta) {
-    const response = await fetch(`http://localhost:3338/balance/${cuenta}`)
+    const response = await fetch(`http://localhost:3334/faucet/balance/${cuenta}`)
     if (response.status == "200"){
     const datos = await response.json();
     setSaldo(datos)

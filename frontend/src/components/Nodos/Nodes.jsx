@@ -36,6 +36,23 @@ export function Nodes() {
         window.location.reload()
     }
 
+    async function LaunchNode(){
+        setDisabled(true);
+        const res = await fetch('http://localhost:3334/node/launch/'+data[0].network, {
+            method: 'POST',
+            body: new FormData()
+        });
+        console.log(res)
+        setDisabled(false);
+        // window.location.reload()
+    }
+
+    function LaunchButton(props) {
+        if (props.nodeId == 1) {
+            return <td><button type="button" onClick={() => LaunchNode()} className="btn btn-outline-success">Launch node</button></td>;
+        }
+    }
+
     function DeleteButton(props) {
         const Id = props.nodeId;
         if (Id != 1) {
@@ -61,7 +78,7 @@ export function Nodes() {
                         <th>Node</th>
                         <th>Port</th>
                         <th>Address</th>
-                        <th>Delete</th>
+                        <th>Buttons</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,6 +87,7 @@ export function Nodes() {
                         <td><Link to={`/nodes/${item.nodo}`}>{item.nodo}</Link></td>
                         <td>{item.port}</td>
                         <td>{item.address.map((cuenta) => <div key={cuenta}>0x{cuenta}</div>)}</td>
+                        <LaunchButton nodeId={item.nodo}/>
                         <DeleteButton nodeId={item.nodo} />
                     </tr>)
                     }
